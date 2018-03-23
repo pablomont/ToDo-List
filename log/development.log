@@ -1,0 +1,3161 @@
+Started GET "/" for 127.0.0.1 at 2018-03-22 16:18:42 -0300
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.5) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.5) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (126.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (125.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateItems (20180322012548)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "notes" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180322012548"]]
+  [1m[35m (90.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-03-22 19:19:31.015372"], ["updated_at", "2018-03-22 19:19:31.015372"]]
+  [1m[35m (112.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-03-22 16:19:47 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 15083ms (Views: 15055.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 16:20:05 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 46ms (Views: 6.0ms | ActiveRecord: 14.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-22 16:20:10 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"title"=>"aaa", "notes"=>"sss", "item"=>{"title"=>"aaa", "notes"=>"sss"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "items" ("title", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "aaa"], ["notes", "sss"], ["created_at", "2018-03-22 19:20:11.028748"], ["updated_at", "2018-03-22 19:20:11.028748"]]
+  [1m[35m (717.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 795ms (Views: 15.9ms | ActiveRecord: 720.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 16:27:53 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 1951ms (Views: 1923.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 16:28:00 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 213ms (Views: 206.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 16:38:58 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (2.0ms)
+Started GET "/" for 127.0.0.1 at 2018-03-22 16:39:02 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 14459ms (Views: 14402.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 18536ms (Views: 18510.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 16:39:19 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 19ms (Views: 10.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 16:47:39 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 2244ms (Views: 2218.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 17:33:49 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 7253ms (Views: 7173.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 18:31:10 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 4437ms (Views: 4397.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 18:35:21 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 1146ms (Views: 637.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 18:36:44 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 2394ms (Views: 2366.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 19:13:18 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.5) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.5) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDoneToItems (20180322215751)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (31.3ms)[0m  [1m[35mALTER TABLE "items" ADD "done" boolean[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180322215751"]]
+  [1m[35m (62.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (31.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-03-22 19:14:12 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 5947ms (Views: 5900.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 19:17:58 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 816ms (Views: 789.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 19:18:59 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 640ms (Views: 613.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 19:22:04 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 813ms (Views: 786.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 19:22:46 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 657ms (Views: 631.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 19:23:13 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 1595ms (Views: 1567.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 19:25:47 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 735ms (Views: 706.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 19:31:18 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 699ms (Views: 673.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 19:31:19 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (15.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 94ms (Views: 71.1ms | ActiveRecord: 15.6ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (20.8ms)[0m  [1m[32mINSERT INTO "items" ("title", "notes", "created_at", "updated_at", "done") VALUES (?, ?, ?, ?, ?)[0m  [["title", "aprender angularJS"], ["notes", "Completar tutorial do site"], ["created_at", "2018-03-22 22:37:46.960439"], ["updated_at", "2018-03-22 22:37:46.960439"], ["done", "t"]]
+  [1m[35m (80.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2018-03-22 19:38:25 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 3687ms (Views: 3658.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 19:38:31 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/items/1?created_at=2018-03-22T19:20:11.028Z&notes=sss&title=aaa&updated_at=2018-03-22T19:20:11.028Z" for 127.0.0.1 at 2018-03-22 19:39:00 -0300
+Processing by ItemsController#destroy as JSON
+  Parameters: {"created_at"=>"2018-03-22T19:20:11.028Z", "notes"=>"sss", "title"=>"aaa", "updated_at"=>"2018-03-22T19:20:11.028Z", "id"=>"1"}
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (15.6ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 1]]
+  [1m[35m (82.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 171ms (ActiveRecord: 98.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 19:40:22 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 666ms (Views: 640.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 19:40:23 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 19:44:09 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 1213ms (Views: 1172.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 19:44:11 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 19:51:25 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 2676ms (Views: 2649.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 19:51:31 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 32ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 20:01:05 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 809ms (Views: 781.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 20:01:06 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 20:25:03 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 1484ms (Views: 1455.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 20:25:05 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 20:26:50 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 321ms (Views: 295.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 20:26:51 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 20:28:18 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 774ms (Views: 747.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 20:28:19 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 20:28:55 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 780ms (Views: 753.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 20:28:56 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 20:32:27 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 764ms (Views: 735.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 20:32:28 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 20:34:02 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 804ms (Views: 776.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 20:34:04 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 20:34:04 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 16ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 20:35:28 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 789ms (Views: 764.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 20:35:29 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 20:35:29 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 20:36:06 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 721ms (Views: 687.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 20:36:07 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 20:36:51 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 308ms (Views: 281.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 20:36:56 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 20:39:07 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3423ms (Views: 3398.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 20:39:11 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 20:39:49 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 3657ms (Views: 3632.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 20:39:54 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 20:39:56 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 20:48:36 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (79.4ms)
+Started GET "/" for 127.0.0.1 at 2018-03-22 20:48:40 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (407.5ms)
+Completed 500 Internal Server Error in 2059ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+    3:   <head>
+    4:     <title>To-do List</title>
+    5:     <%= csrf_meta_tags %>
+    6:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    7:     <%= javascript_include_tag 'application' %>
+    8:   </head>
+    9:   <body ng-app="app">
+  
+app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__1329561037_116328980'
+Completed 200 OK in 4391ms (Views: 3868.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 20:49:38 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 382ms (Views: 345.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 20:49:40 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (2.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 23ms (Views: 6.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 20:50:31 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 914ms (Views: 884.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 20:50:36 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:00:40 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 4445ms (Views: 4393.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:00:46 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:03:05 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 867ms (Views: 832.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:03:06 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:06:08 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 304ms (Views: 278.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:06:09 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:07:14 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 315ms (Views: 288.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:07:28 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (664.8ms)
+Completed 200 OK in 1041ms (Views: 932.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:07:52 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:11:48 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3686ms (Views: 3646.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:11:52 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 366ms (Views: 336.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:12:53 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  Rendered items/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 1208ms (Views: 1181.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:12:58 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:13:47 -0300
+Processing by ItemsController#index as HTML
+Completed 406 Not Acceptable in 1297ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (ItemsController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.5) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:13:51 -0300
+Processing by ItemsController#index as HTML
+Completed 406 Not Acceptable in 1154ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (ItemsController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.5) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:17:01 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 292ms (Views: 261.7ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:17:02 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (9.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 49ms (Views: 40.7ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:21:30 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 1358ms (Views: 1319.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:21:34 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:23:02 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 807ms (Views: 781.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:23:03 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:30:03 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 813ms (Views: 785.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:30:05 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:34:53 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 1178ms (Views: 1150.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:34:59 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:37:35 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (227.5ms)
+Completed 200 OK in 1262ms (Views: 1216.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:37:37 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:47:29 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 1778ms (Views: 1751.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:47:32 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 11ms (Views: 6.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:47:32 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:49:52 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (149.2ms)
+Completed 200 OK in 1431ms (Views: 1402.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:49:54 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:49:54 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:50:01 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 16ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:50:04 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:50:05 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:50:06 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:50:07 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:50:09 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 7ms (Views: 3.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:50:13 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 272ms (Views: 244.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:50:18 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:50:38 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 16ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:50:55 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:51:49 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:51:49 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:51:50 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 2ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:51:50 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:51:51 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:51:52 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:53:06 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 2028ms (Views: 1988.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:53:09 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:53:13 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:56:56 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 1350ms (Views: 1319.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:57:00 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:57:02 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 21:59:34 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (13.0ms)
+Completed 200 OK in 736ms (Views: 707.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:59:35 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 21:59:36 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:02:03 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (18.8ms)
+Completed 200 OK in 807ms (Views: 781.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:02:05 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:02:08 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:11:46 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (15.6ms)
+Completed 200 OK in 956ms (Views: 916.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:11:47 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:11:53 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:14:03 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (12.0ms)
+Completed 200 OK in 689ms (Views: 662.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:14:05 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:14:05 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:14:06 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 365ms (Views: 335.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:14:07 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:14:10 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-22 22:14:23 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"title"=>"Estudar para prova de física", "notes"=>"Cap 25", "done"=>false, "item"=>{"title"=>"Estudar para prova de física", "notes"=>"Cap 25", "done"=>false}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (55.3ms)[0m  [1m[32mINSERT INTO "items" ("title", "notes", "created_at", "updated_at", "done") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Estudar para prova de física"], ["notes", "Cap 25"], ["created_at", "2018-03-23 01:14:24.052249"], ["updated_at", "2018-03-23 01:14:24.052249"], ["done", "f"]]
+  [1m[35m (177.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 1633ms (Views: 1183.3ms | ActiveRecord: 232.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:14:38 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 326ms (Views: 286.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:14:39 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:16:23 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 422ms (Views: 395.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:16:25 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:16:46 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:25:07 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (20.0ms)
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:25:10 -0300
+Completed 200 OK in 5337ms (Views: 5308.9ms | ActiveRecord: 0.0ms)
+
+
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 289ms (Views: 263.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:25:27 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:25:36 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-22 22:26:24 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"title"=>"limpar o quarto", "notes"=>"organizar as roupas", "item"=>{"title"=>"limpar o quarto", "notes"=>"organizar as roupas"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "items" ("title", "notes", "created_at", "updated_at", "done") VALUES (?, ?, ?, ?, ?)[0m  [["title", "limpar o quarto"], ["notes", "organizar as roupas"], ["created_at", "2018-03-23 01:26:24.991338"], ["updated_at", "2018-03-23 01:26:24.991338"], ["done", "f"]]
+  [1m[35m (93.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 172ms (Views: 5.0ms | ActiveRecord: 93.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:26:27 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 366ms (Views: 330.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:26:28 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:26:42 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDefaultValueToDoneAttribute (20180323014022)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aitems" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "notes" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "done" boolean DEFAULT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "aitems" ("id","title","notes","created_at","updated_at","done")
+                     SELECT "id","title","notes","created_at","updated_at","done" FROM "items"[0m
+  [1m[35m (15.6ms)[0m  [1m[35mDROP TABLE "items"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "items" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "notes" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "done" boolean DEFAULT 'f')[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "items" ("id","title","notes","created_at","updated_at","done")
+                     SELECT "id","title","notes","created_at","updated_at","done" FROM "aitems"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aitems"[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180323014022"]]
+  [1m[35m (117.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:46:07 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (19.3ms)
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:46:09 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 2909ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+    4:     <title>To-do List</title>
+    5:     <%= csrf_meta_tags %>
+    6:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    7:     <%= javascript_include_tag 'application' %>
+    8:   </head>
+    9:   <body ng-app="app">
+   10:     <%= yield %>
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1142624194_65401680'
+Completed 200 OK in 1389ms (Views: 1360.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:46:14 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3335ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:46:36 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-22 22:47:12 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"title"=>"concertar lamparina", "notes"=>"trocar engrenagens", "item"=>{"title"=>"concertar lamparina", "notes"=>"trocar engrenagens"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "items" ("title", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "concertar lamparina"], ["notes", "trocar engrenagens"], ["created_at", "2018-03-23 01:47:12.770021"], ["updated_at", "2018-03-23 01:47:12.770021"]]
+  [1m[35m (99.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 158ms (Views: 20.2ms | ActiveRecord: 99.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:47:16 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 335ms (Views: 308.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:47:18 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:48:41 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 1039ms (Views: 1002.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:48:43 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:49:52 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 713ms (Views: 675.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:49:53 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:52:05 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 751ms (Views: 725.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:52:07 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:52:28 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 294ms (Views: 268.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:52:29 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:53:41 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 653ms (Views: 627.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:53:43 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:54:11 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 710ms (Views: 684.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:54:12 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:55:04 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 695ms (Views: 669.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:55:05 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:55:56 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 655ms (Views: 628.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:55:58 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:56:14 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 658ms (Views: 630.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:56:15 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:57:25 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 684ms (Views: 658.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:57:27 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 16ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:58:28 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 856ms (Views: 826.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:58:29 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 22:58:55 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 302ms (Views: 277.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:58:56 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 22:59:13 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:02:10 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 934ms (Views: 892.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:02:11 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:02:13 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:03:16 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 793ms (Views: 746.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:03:18 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:03:22 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 9ms (Views: 3.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:05:16 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 855ms (Views: 827.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:05:17 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:05:19 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 10ms (Views: 5.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:05:44 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 1227ms (Views: 1199.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:05:46 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (15.6ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 16ms (Views: -10.4ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:05:46 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:06:04 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 1724ms (Views: 1692.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:06:06 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:06:08 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:06:36 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 684ms (Views: 658.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:06:37 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:06:37 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:08:49 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 1421ms (Views: 1391.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:08:51 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:08:51 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:09:51 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 1342ms (Views: 1315.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:09:53 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:09:54 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:10:36 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 795ms (Views: 769.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:10:38 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:10:38 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:13:48 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 633ms (Views: 607.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:13:49 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:13:50 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:15:03 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 1552ms (Views: 1520.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:15:06 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:15:12 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:15:34 -0300
+Processing by ItemsController#create as JSON
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:16:39 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 1651ms (Views: 1624.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:16:42 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:16:43 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:16:45 -0300
+Processing by ItemsController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:18:06 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 280ms (Views: 253.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:18:07 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:18:10 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:31:04 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (20.0ms)
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:31:07 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 4848ms (Views: 4818.0ms | ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 5789ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+    4:     <title>To-do List</title>
+    5:     <%= csrf_meta_tags %>
+    6:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    7:     <%= javascript_include_tag 'application' %>
+    8:   </head>
+    9:   <body ng-app="app">
+   10:     <%= yield %>
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___1290555391_73384700'
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:31:15 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 2458ms (Views: 40.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:32:40 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (2.0ms)
+Completed 200 OK in 2025ms (Views: 1996.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:32:44 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 255ms (Views: 230.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:32:45 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:33:29 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 1003ms (Views: 976.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:33:31 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:33:33 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:33:47 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"title"=>"uu", "notes"=>"jjjj", "item"=>{"title"=>"uu", "notes"=>"jjjj"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (15.6ms)[0m  [1m[32mINSERT INTO "items" ("title", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "uu"], ["notes", "jjjj"], ["created_at", "2018-03-23 02:33:47.271659"], ["updated_at", "2018-03-23 02:33:47.271659"]]
+  [1m[35m (252.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 346ms (Views: 19.2ms | ActiveRecord: 267.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:34:35 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 272ms (Views: 245.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:34:36 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/items/6?created_at=2018-03-23T02:33:47.271Z&done=false&notes=jjjj&title=uu&updated_at=2018-03-23T02:33:47.271Z" for 127.0.0.1 at 2018-03-22 23:34:45 -0300
+Processing by ItemsController#destroy as JSON
+  Parameters: {"created_at"=>"2018-03-23T02:33:47.271Z", "done"=>"false", "notes"=>"jjjj", "title"=>"uu", "updated_at"=>"2018-03-23T02:33:47.271Z", "id"=>"6"}
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (18.6ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 6]]
+  [1m[35m (86.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 204 No Content in 171ms (ActiveRecord: 106.5ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:34:53 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:38:47 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 1472ms (Views: 1432.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:38:49 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:38:51 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:38:55 -0300
+Processing by ItemsController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:38:56 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"item"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:38:57 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"item"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:38:58 -0300
+  
+Processing by ItemsController#create as JSON
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+  Parameters: {"item"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:39:02 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"item"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:39:05 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"item"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:39:06 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"item"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:39:22 -0300
+Processing by ItemsController#index as HTML
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:39:23 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"item"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  Rendering items/index.html within layouts/application
+  
+  Rendered items/index.html within layouts/application (0.0ms)
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:39:26 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"item"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+Completed 200 OK in 8021ms (Views: 7589.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:39:32 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 43ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:39:54 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 16ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:39:56 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (15.6ms)
+Completed 200 OK in 1540ms (Views: 1511.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:39:59 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:40:04 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:40:10 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"title"=>"oi", "notes"=>"oo", "item"=>{"title"=>"oi", "notes"=>"oo"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "items" ("title", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "oi"], ["notes", "oo"], ["created_at", "2018-03-23 02:40:10.387512"], ["updated_at", "2018-03-23 02:40:10.387512"]]
+  [1m[35m (113.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 179ms (Views: 0.8ms | ActiveRecord: 115.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:41:45 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 1180ms (Views: 1150.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:41:47 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:41:50 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:42:07 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"title"=>"aaaa", "notes"=>"bbbbb", "item"=>{"title"=>"aaaa", "notes"=>"bbbbb"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (93.8ms)[0m  [1m[32mINSERT INTO "items" ("title", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "aaaa"], ["notes", "bbbbb"], ["created_at", "2018-03-23 02:42:07.973131"], ["updated_at", "2018-03-23 02:42:07.973131"]]
+  [1m[35m (352.4ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 493ms (Views: 1.0ms | ActiveRecord: 446.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:42:49 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 1675ms (Views: 1648.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:42:52 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:42:54 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 14ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:42:57 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"title"=>"sss", "notes"=>"ddd", "item"=>{"title"=>"sss", "notes"=>"ddd"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "items" ("title", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "sss"], ["notes", "ddd"], ["created_at", "2018-03-23 02:42:57.669710"], ["updated_at", "2018-03-23 02:42:57.669710"]]
+  [1m[35m (95.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 147ms (Views: 1.1ms | ActiveRecord: 97.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:43:05 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 367ms (Views: 336.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:43:05 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:46:30 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 1229ms (Views: 1202.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:46:33 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:46:34 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:47:13 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 1416ms (Views: 1390.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:47:15 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:47:16 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:47:43 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 546ms (Views: 521.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:47:44 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:47:46 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 16ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:48:23 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 1355ms (Views: 1316.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:48:25 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:48:26 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:49:03 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 1083ms (Views: 1057.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:49:05 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 16ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:49:08 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:50:11 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 1370ms (Views: 1338.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:50:13 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:50:14 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:51:55 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 467ms (Views: 437.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:51:56 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:51:58 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:51:59 -0300
+Processing by ItemsController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:53:47 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 1787ms (Views: 1762.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:53:49 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:53:51 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:53:52 -0300
+Processing by ItemsController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:56:39 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 1393ms (Views: 1297.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:56:43 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:56:43 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:56:47 -0300
+Processing by ItemsController#create as JSON
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+Started GET "/" for 127.0.0.1 at 2018-03-22 23:57:27 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 858ms (Views: 821.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:57:29 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-22 23:57:31 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-22 23:57:32 -0300
+Processing by ItemsController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:00:05 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 694ms (Views: 668.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:00:18 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 398ms (Views: 374.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:04:10 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (170.5ms)
+Completed 200 OK in 7719ms (Views: 7483.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:05:36 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (2.0ms)
+Completed 200 OK in 894ms (Views: 868.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:08:10 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 1034ms (Views: 1007.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:28:48 -0300
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:28:48 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (74.6ms)
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 14262ms (Views: 14166.6ms | ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 14194ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+    4:     <title>To-do List</title>
+    5:     <%= csrf_meta_tags %>
+    6:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    7:     <%= javascript_include_tag 'application' %>
+    8:   </head>
+    9:   <body ng-app="app">
+   10:     <%= yield %>
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___74750530_70403180'
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:31:31 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:31:31 -0300
+Processing by ItemsController#index as HTML
+Completed 200 OK in 445ms (Views: 420.1ms | ActiveRecord: 0.0ms)
+
+
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 309ms (Views: 281.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:32:43 -0300
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:32:43 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (6.0ms)
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 3912ms (Views: 3875.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 5198ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+    4:     <title>To-do List</title>
+    5:     <%= csrf_meta_tags %>
+    6:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    7:     <%= javascript_include_tag 'application' %>
+    8:   </head>
+    9:   <body ng-app="app">
+   10:     <%= yield %>
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__912395792_71663260'
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:38:04 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (4.0ms)
+Completed 200 OK in 2305ms (Views: 2279.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:41:17 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:41:18 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 1294ms (Views: 1262.1ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 1032ms (Views: 1003.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:42:00 -0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (2.0ms)
+Completed 200 OK in 1774ms (Views: 1749.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:42:59 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (2.9ms)
+Completed 200 OK in 1188ms (Views: 1147.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:43:04 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 301ms (Views: 274.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:43:20 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 285ms (Views: 257.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:43:32 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 311ms (Views: 283.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:45:45 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 829ms (Views: 803.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:47:08 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 682ms (Views: 653.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 00:47:09 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (20.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 107ms (Views: 56.4ms | ActiveRecord: 23.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 00:47:17 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-23 00:47:19 -0300
+Processing by ItemsController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:51:12 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 711ms (Views: 685.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 00:51:13 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 30ms (Views: 11.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 00:51:13 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:51:15 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 462ms (Views: 432.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 00:51:16 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 00:51:17 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-23 00:51:20 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"title"=>"aaa", "notes"=>"tttt", "item"=>{"title"=>"aaa", "notes"=>"tttt"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (37.0ms)[0m  [1m[32mINSERT INTO "items" ("title", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "aaa"], ["notes", "tttt"], ["created_at", "2018-03-23 03:51:20.986384"], ["updated_at", "2018-03-23 03:51:20.986384"]]
+  [1m[35m (76.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 201ms (Views: 35.2ms | ActiveRecord: 113.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:53:48 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 1875ms (Views: 1847.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 00:53:51 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 00:53:52 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-23 00:53:54 -0300
+Processing by ItemsController#create as JSON
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:53:54 -0300
+  Parameters: {"title"=>"sss", "notes"=>"ddd", "item"=>{"title"=>"sss", "notes"=>"ddd"}}
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+Processing by ItemsController#index as HTML
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "items" ("title", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "sss"], ["notes", "ddd"], ["created_at", "2018-03-23 03:53:55.015294"], ["updated_at", "2018-03-23 03:53:55.015294"]]
+  [1m[35m (60.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 180ms (Views: 0.9ms | ActiveRecord: 62.0ms)
+
+
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 410ms (Views: 320.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 00:53:56 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 00:53:56 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:54:11 -0300
+Started POST "/items" for 127.0.0.1 at 2018-03-23 00:54:11 -0300
+Processing by ItemsController#index as HTML
+Processing by ItemsController#create as JSON
+  Parameters: {"title"=>"bbbb", "notes"=>"dddd", "item"=>{"title"=>"bbbb", "notes"=>"dddd"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (15.0ms)[0m  [1m[32mINSERT INTO "items" ("title", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "bbbb"], ["notes", "dddd"], ["created_at", "2018-03-23 03:54:11.537001"], ["updated_at", "2018-03-23 03:54:11.537001"]]
+  [1m[35m (202.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering items/index.html within layouts/application
+Completed 201 Created in 353ms (Views: 1.0ms | ActiveRecord: 217.9ms)
+
+
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 580ms (Views: 548.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 00:54:12 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 00:54:12 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 11ms (Views: 8.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:56:06 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 1604ms (Views: 1577.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 00:56:08 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 00:56:09 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-23 00:56:10 -0300
+Processing by ItemsController#create as JSON
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:56:54 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 1414ms (Views: 1387.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 00:56:56 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 00:56:57 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-23 00:56:59 -0300
+Processing by ItemsController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+Started GET "/" for 127.0.0.1 at 2018-03-23 00:59:59 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 303ms (Views: 277.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:00:01 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:00:01 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 01:01:03 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 867ms (Views: 838.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:01:04 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 40ms (Views: 39.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:01:11 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 01:01:12 -0300
+Started POST "/items" for 127.0.0.1 at 2018-03-23 01:01:12 -0300
+Processing by ItemsController#index as HTML
+Processing by ItemsController#create as JSON
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 342ms (Views: 315.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:01:14 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 478ms (Views: 465.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:01:15 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 373ms (Views: 365.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-23 01:01:24 -0300
+Started GET "/" for 127.0.0.1 at 2018-03-23 01:01:24 -0300
+Processing by ItemsController#create as JSON
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+Processing by ItemsController#index as HTML
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 336ms (Views: 310.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:01:26 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:01:27 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 01:04:38 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 2420ms (Views: 2392.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:04:41 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:04:42 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-23 01:04:44 -0300
+Processing by ItemsController#create as JSON
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: item):
+  
+app/controllers/items_controller.rb:23:in `item_params'
+app/controllers/items_controller.rb:11:in `create'
+Started GET "/" for 127.0.0.1 at 2018-03-23 01:18:14 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 698ms (Views: 661.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:18:15 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:18:17 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:18:24 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:18:26 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:18:28 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:18:37 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:19:00 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-23 01:19:02 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"title"=>"aaa", "notes"=>"ss", "item"=>{"title"=>"aaa", "notes"=>"ss"}}
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "items" ("title", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "aaa"], ["notes", "ss"], ["created_at", "2018-03-23 04:19:02.154361"], ["updated_at", "2018-03-23 04:19:02.154361"]]
+  [1m[35m (159.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 211ms (Views: 1.0ms | ActiveRecord: 162.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 01:19:14 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 318ms (Views: 291.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:19:15 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 01:20:25 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 673ms (Views: 643.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:20:26 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:20:27 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 01:20:34 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 425ms (Views: 397.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:20:35 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:20:38 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 01:20:46 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 315ms (Views: 284.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:20:47 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:22:56 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:22:57 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:22:59 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:23:06 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:23:11 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:23:20 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:23:40 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:23:44 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:23:48 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:23:50 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 01:24:01 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 375ms (Views: 350.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:24:01 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 01:24:06 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 301ms (Views: 269.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:24:06 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:24:10 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-23 01:24:13 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"title"=>"pppp", "notes"=>"iiiii", "item"=>{"title"=>"pppp", "notes"=>"iiiii"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.5ms)[0m  [1m[32mINSERT INTO "items" ("title", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "pppp"], ["notes", "iiiii"], ["created_at", "2018-03-23 04:24:13.688019"], ["updated_at", "2018-03-23 04:24:13.688019"]]
+  [1m[35m (140.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 200ms (Views: 1.0ms | ActiveRecord: 150.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 01:24:31 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 350ms (Views: 307.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:24:31 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-23 01:28:37 -0300
+Processing by ItemsController#index as HTML
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 803ms (Views: 777.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:28:38 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:28:40 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:28:44 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:28:47 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-23 01:28:52 -0300
+Processing by ItemsController#create as JSON
+Started GET "/" for 127.0.0.1 at 2018-03-23 01:28:52 -0300
+  Parameters: {"title"=>"iiii", "notes"=>"uuuu", "item"=>{"title"=>"iiii", "notes"=>"uuuu"}}
+Processing by ItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (10.0ms)[0m  [1m[32mINSERT INTO "items" ("title", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "iiii"], ["notes", "uuuu"], ["created_at", "2018-03-23 04:28:52.745278"], ["updated_at", "2018-03-23 04:28:52.745278"]]
+  [1m[35m (217.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 379ms (Views: 1.1ms | ActiveRecord: 227.0ms)
+
+
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (0.0ms)
+Completed 200 OK in 575ms (Views: 538.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:28:53 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:28:53 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:29:01 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2018-03-23 01:29:05 -0300
+Started GET "/" for 127.0.0.1 at 2018-03-23 01:29:05 -0300
+Processing by ItemsController#create as JSON
+  Parameters: {"title"=>"uuuu", "notes"=>"kkkk", "item"=>{"title"=>"uuuu", "notes"=>"kkkk"}}
+Processing by ItemsController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "items" ("title", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "uuuu"], ["notes", "kkkk"], ["created_at", "2018-03-23 04:29:05.927219"], ["updated_at", "2018-03-23 04:29:05.927219"]]
+  [1m[35m (77.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 232ms (Views: 0.7ms | ActiveRecord: 78.6ms)
+
+
+  Rendering items/index.html within layouts/application
+  Rendered items/index.html within layouts/application (1.0ms)
+Completed 200 OK in 401ms (Views: 372.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:29:06 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-23 01:29:06 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+

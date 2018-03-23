@@ -1,0 +1,22 @@
+<div ng-hide="myForm.$submitted" class="well">
+    <h3 >Adicione um novo item</h3>
+    <form name="myForm" ng-submit="addItem()">
+      <div class="row">
+        <div class="col-xs-6">
+          <input type="text" ng-model="newItem.title" class="form-control" placeholder="Título" />
+        </div>
+        <div class="col-xs-6">
+          <input type="text" ng-model="newItem.notes" class="form-control" placeholder="Observação" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <br />
+          <div class="btn-group">
+            <input type="Submit" value="Adicionar" class="btn btn-success"/>
+            <a href="#/" class="btn btn-primary">Cancelar</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>

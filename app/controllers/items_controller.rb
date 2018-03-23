@@ -20,7 +20,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:title, :notes)
+    params.require(:item).permit(:title, :notes, :done)
   end
 
 end

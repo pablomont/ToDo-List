@@ -1,0 +1,16 @@
+{:uriI"òfile://app/assets/javascripts/angular/templates/items/addItem.html?type=text/ng-html&id=c318ea44a763ad00609c55b4cdeb5d35785fac06916c75961a59b4e403150a2e:ET:load_pathI"app/assets/javascripts;T:filenameI"@app/assets/javascripts/angular/templates/items/addItem.html;T:	nameI"$angular/templates/items/addItem;T:logical_pathI")angular/templates/items/addItem.html;T:content_typeI"text/ng-html;T:sourceI":<form name="myForm" ng-hide="myForm.$submitted" ng-submit="addItem()">
+    <div class="form-group">
+      <label for="InputTitle">T√≠tulo</label>
+      <input type="text" ng-model="newItem.title" class="form-control" id="InputT√≠tulo"  placeholder="T√≠tulo">
+    </div>
+    <div class="form-group">
+      <label for="InputNotes">Observa√ß√µes</label>
+      <input type="text" ng-model="newItem.notes" class="form-control" id="InputNotes" placeholder="Observa√ß√µes">
+    </div>
+    <button type="submit" class="btn btn-success" id="buttonSubmit">Submit</button>
+</form>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Nfile-digest://app/assets/javascripts/angular/templates/items/addItem.html;TTF:charsetI"
+utf-8;F:digest"%˘”fOlZΩXtP	≈ßÃõ@ò6¸ÉenÃwc>Z:lengthi::dependencies_digest"%∞∆7ñŸç<ÿK©hÉÿÚôP$IÎﬂª¢bÌ%ƒ.Y:idI"Ec318ea44a763ad00609c55b4cdeb5d35785fac06916c75961a59b4e403150a2e;F:
+mtimel+ET¥Z
