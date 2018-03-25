@@ -11,7 +11,7 @@ gem 'sqlite3' , :group => [:development, :test]
 gem "responders"
 gem 'bower-rails'
 gem 'angular-rails-templates'
-gem 'bootstrap-sass', '~> 3.2.0.2'
+gem 'bootstrap', '~> 4.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'

@@ -1,44 +1,12 @@
-<div class="container">
-
-<div class="row">
-  <div class="col-md-12">
-      <h1>
-          To-do list
-          <a class="btn btn-primary" ui-sref="home.addItem">Add item</a>
-      </h1>
-  
+<div class="container"> 
+<div class="col-xs-12 text-center">
+  <h1 > To-do list</h1>
   <br>
-  <ui-view></ui-view>  
-  <br> 
-
-  <div ng-show="items.length">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Título</th>
-            <th>Observação</th>
-            <th>Feito</th>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>    
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr ng-repeat="item in items">
-            <td>{{ item.title }}</td>
-            <td>{{ item.notes }}</td>
-            <td><input type="checkbox" name="done" ng-model="item.done"></td>
-            <td><a class="btn btn-primary" ui-sref="/item({ itemId: item.id })">Editar</a></td>
-            <td><a class="btn btn-danger btn" ng-click="deleteItem($index)">Remover</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div ng-hide="items.length">
-      <div class="alert alert-warning">
-        <strong>Atenção!</strong> Ainda não existe itens !
-      </div>
-    </div>
-  </div>
+  <ul class="list-group">
+    <li class="list-group-item"><a href="#" ui-sref="home.addItem" ui-sref-active="active"> Adicionar item</a></li>
+    <li class="list-group-item"><a href="#" ui-sref= "home.verItems" ui-sref-active="active"> Ver lista de itens</a></li> 
+  </ul>
+</div>  
+<br>
+<ui-view></ui-view> 
 </div>

@@ -11,8 +11,13 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
       controller: 'ItemsController'
     })
     .state('home.addItem', {
-        url: 'addItem',
+        url: 'editItem',
         templateUrl: 'angular/templates/items/addItem.html',
+        controller: 'ItemsController'
+      })
+      .state('home.verItems', {
+        url: 'verItems',
+        templateUrl: 'angular/templates/items/verItems.html',
         controller: 'ItemsController'
       });
       
