@@ -1,8 +1,8 @@
-
-
 var app = angular.module('app');
 
-app.controller("ItemsController",function($scope, $stateParams,$location,itemModel){
+app.controller("ItemsController",ItemsController);
+
+function ItemsController($scope, $stateParams,$location,itemModel){
     $scope.item = itemModel.get({ id: $stateParams.id });
     $scope.items = itemModel.query();
    
@@ -26,4 +26,4 @@ app.controller("ItemsController",function($scope, $stateParams,$location,itemMod
           $location.path('items');
         });
       };
-})
+}
