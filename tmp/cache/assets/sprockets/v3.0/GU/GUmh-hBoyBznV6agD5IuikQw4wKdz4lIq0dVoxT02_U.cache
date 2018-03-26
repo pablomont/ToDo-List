@@ -1,0 +1,17 @@
+{:uriI"•file://app/assets/javascripts/angular/templates/items/home.html?type=text/ng-html&id=e9258ee9905b918246c65a4066c779cc15cf80cf258ff7063cced5775329cadb:ET:load_pathI"app/assets/javascripts;T:filenameI"=app/assets/javascripts/angular/templates/items/home.html;T:	nameI"!angular/templates/items/home;T:logical_pathI"&angular/templates/items/home.html;T:content_typeI"text/ng-html;T:sourceI"—<div class="container"> 
+<div class="col-xs-12 text-center">
+  <h1 > To-do list</h1>
+  <br>
+  <ul class="list-group">
+    <li class="list-group-item"><a href="#" ui-sref="home.addItem" ui-sref-active="active"> Adicionar item</a></li>
+    <li class="list-group-item"><a href="#" ui-sref= "home.verItems" ui-sref-active="active"> Ver lista de itens</a></li> 
+  </ul>
+</div>  
+<br>
+<ui-view></ui-view> 
+</div>
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Kfile-digest://app/assets/javascripts/angular/templates/items/home.html;TTF:charsetI"
+utf-8;F:digest"%#~æ)Fˆa+hÕğ.†Cù Bu49X=—»1:lengthi—:dependencies_digest"%åË¡%w«UÎÖş;Šºzø·	8¬ÈŞ	’gÔsÇYá:idI"Ee9258ee9905b918246c65a4066c779cc15cf80cf258ff7063cced5775329cadb;F:
+mtimel+íò·Z

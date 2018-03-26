@@ -1,46 +1,0 @@
-{:uriI"•file://app/assets/javascripts/angular/templates/items/home.html?type=text/ng-html&id=d892d095b8fc133141e154a53e7281cf8e09125be6c9a4c53c5e7df73c895184:ET:load_pathI"app/assets/javascripts;T:filenameI"=app/assets/javascripts/angular/templates/items/home.html;T:	nameI"!angular/templates/items/home;T:logical_pathI"&angular/templates/items/home.html;T:content_typeI"text/ng-html;T:sourceI"_<div class="container">
-
-<div class="row">
-  <div class="col-md-12">
-      <h1>
-          To-do list
-          <a class="btn btn-primary" ui-sref="home.addItem">Add item</a>
-      </h1>
-  
-  <br>
-
-  <div ng-show="items.length">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>TÃ­tulo</th>
-            <th>ObservaÃ§Ã£o</th>
-            <th>Feito</th>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>    
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr ng-repeat="item in items">
-            <td>{{ item.title }}</td>
-            <td>{{ item.notes }}</td>
-            <td><input type="checkbox" name="done" ng-model="item.done"></td>
-            <td><a class="btn btn-primary" ui-sref="/item({ itemId: item.id })">Editar</a></td>
-            <td><a class="btn btn-danger btn" ng-click="deleteItem($index)">Remover</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div ng-hide="items.length">
-      <div class="alert alert-warning">
-        <strong>AtenÃ§Ã£o!</strong> Ainda nÃ£o existe itens !
-      </div>
-    </div>
-  </div>
-</div>;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Kfile-digest://app/assets/javascripts/angular/templates/items/home.html;TTF:charsetI"
-utf-8;F:digest"%/ÖlSP®¡`rN{ŽA7}³xÄ-Ú´9Àçèb\ƒ:lengthi_:dependencies_digest"%%–kÑGJ_ÉHá¿®–Ö¼ßéc2ûµ8:idI"Ed892d095b8fc133141e154a53e7281cf8e09125be6c9a4c53c5e7df73c895184;F:
-mtimel+ f´Z

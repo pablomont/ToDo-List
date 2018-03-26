@@ -1,0 +1,10 @@
+{:uriI"™file://app/assets/javascripts/angular/templates/items/viewItem.html?type=text/ng-html&id=5007ab45121d9295e4dc56ea599c9a18ec6bfb157e73b0a6a92ec76a5f2be710:ET:load_pathI"app/assets/javascripts;T:filenameI"Aapp/assets/javascripts/angular/templates/items/viewItem.html;T:	nameI"%angular/templates/items/viewItem;T:logical_pathI"*angular/templates/items/viewItem.html;T:content_typeI"text/ng-html;T:sourceI"E
+<h3>{{ ctrl.item.title }}</h3>
+<p>
+  {{ ctrl.item.notes }}
+</p>;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Ofile-digest://app/assets/javascripts/angular/templates/items/viewItem.html;TTF:charsetI"
+utf-8;F:digest"%„ìÚ!:ãzc}axÿä„Ş–4íÂş7í¹	#H6G:lengthiE:dependencies_digest"%#³XşJXAM½$–>§Iò˜H©MHø§
+¸W†L:idI"E5007ab45121d9295e4dc56ea599c9a18ec6bfb157e73b0a6a92ec76a5f2be710;F:
+mtimel+ª{¸Z

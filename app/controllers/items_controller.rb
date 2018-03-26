@@ -8,14 +8,29 @@ class ItemsController < ApplicationController
   end
 
   def create
-    respond_with Item.create(item_params)
+    @item = Item.new(item_params)
+      if @item.save
+        respond_to do |format|
+          format.json { render :json => @item }
+        end
+      end
+  end
+
+  def update
+    @item= Item.find(params[:id])
+    if @item.update(item_params)
+      respond_to do |format|
+        format.json { render :json => @item }
+      end
+    end
+  end
+
+  def show
+    respond_with(Item.find(params[:id]))
   end
 
   def destroy
     respond_with Item.destroy(params[:id])
-  end
-
-  def edit
   end
 
   private

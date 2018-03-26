@@ -1,27 +1,0 @@
-{:uriI"˜file://app/assets/javascripts/angular/templates/items/addItem.html?type=text/ng-html&id=e2303a2edf16e4200eacd94a8e648c034a602e47fffa0957dcfab279657b238e:ET:load_pathI"app/assets/javascripts;T:filenameI"@app/assets/javascripts/angular/templates/items/addItem.html;T:	nameI"$angular/templates/items/addItem;T:logical_pathI")angular/templates/items/addItem.html;T:content_typeI"text/ng-html;T:sourceI"R<div ng-hide="myForm.$submitted" class="well">
-    <h3 >Adicione um novo item</h3>
-    <form name="myForm" ng-submit="addItem()">
-      <div class="row">
-        <div class="col-xs-6">
-          <input type="text" ng-model="newItem.title" class="form-control" placeholder="TÃ­tulo" />
-        </div>
-        <div class="col-xs-6">
-          <input type="text" ng-model="newItem.notes" class="form-control" placeholder="ObservaÃ§Ã£o" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 text-center">
-          <br />
-          <div class="btn-group">
-            <input type="Submit" value="Adicionar" class="btn btn-primary" ng-click="reloadRoute()"/>
-            <input type="Submit" value="Cancelar" class="btn btn-light" ng-click="reloadRoute()" />
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Nfile-digest://app/assets/javascripts/angular/templates/items/addItem.html;TTF:charsetI"
-utf-8;F:digest"%?Æ›+J×ø™¶¥'V"RøZ7¼š=Õ÷—{kê:lengthiR:dependencies_digest"%—
-AâNÍ|J5¢OM„¸eÅĞG’€ÏÊÃœÌ‘Ç:idI"Ee2303a2edf16e4200eacd94a8e648c034a602e47fffa0957dcfab279657b238e;F:
-mtimel+àl´Z

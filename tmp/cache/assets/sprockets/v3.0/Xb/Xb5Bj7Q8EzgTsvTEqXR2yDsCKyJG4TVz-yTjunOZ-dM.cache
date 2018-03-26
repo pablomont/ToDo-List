@@ -1,15 +1,0 @@
-{:uriI"™file://app/assets/javascripts/angular/templates/items/editItem.html?type=text/ng-html&id=7ed22d44d61bf2849be95eb4780a1d8daab969e857df6d9c121b6254ca693e50:ET:load_pathI"app/assets/javascripts;T:filenameI"Aapp/assets/javascripts/angular/templates/items/editItem.html;T:	nameI"%angular/templates/items/editItem;T:logical_pathI"*angular/templates/items/editItem.html;T:content_typeI"text/ng-html;T:sourceI"Ä<form name="myForm" ng-submit="addItem()">
-    <div class="form-group">
-        <input type="text" ng-model="item.title" class="form-control" placeholder="TÃ­tulo" />
-    </div>  
-    <div class="form-group"> 
-      <input type="text" ng-model="item.notes" class="form-control" placeholder="ObservaÃ§Ã£o" />
-    </div>  
-    <div class="col-xs-12 text-center">
-      <input type="Submit" value="Adicionar" class="btn btn-success"/>
-    </div>
-  </form>;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Ofile-digest://app/assets/javascripts/angular/templates/items/editItem.html;TTF:charsetI"
-utf-8;F:digest"%é¾•h~;…»dµ{Ÿs°a¶zÃ{ìof®ù8:lengthiÄ:dependencies_digest"%¬1£Üe—ê#UÎ¸xaÙë……!jní'Ş¼Í5c:idI"E7ed22d44d61bf2849be95eb4780a1d8daab969e857df6d9c121b6254ca693e50;F:
-mtimel+ÛM·Z

@@ -2,25 +2,28 @@
 
 var app = angular.module('app');
 
-app.factory("Item",function($resource){
-    return $resource("items/:id",{ id: '@id'},{
-        index: { method: 'GET', isArray: true, responseType: 'json'},
-        update:  { method: 'PUT', responseType: 'json' }
-    })
-})
-
-app.controller("ItemsController",function($scope, Item){
-    $scope.items = Item.index();
+app.controller("ItemsController",function($scope, $stateParams,$location,itemModel){
+    $scope.item = itemModel.get({ id: $stateParams.id });
+    $scope.items = itemModel.query();
+   
     $scope.addItem = function(){
-        item = Item.save($scope.newItem)
+        item = itemModel.save($scope.newItem)
         $scope.items.push(item)
         $scope.newItem = {}
-        window.location.reload(false);
+        window.alert("Item adicionado !")
+        $location.path('items');
     }
 
     $scope.deleteItem = function(index){
         item = $scope.items[index]
-        Item.delete(item);
+        itemModel.delete(item);
         $scope.items.splice(index,1)
     }
+
+    $scope.editItem = function() {
+        $scope.item.$update(function() {
+          window.alert("Item salvo !")
+          $location.path('items');
+        });
+      };
 })

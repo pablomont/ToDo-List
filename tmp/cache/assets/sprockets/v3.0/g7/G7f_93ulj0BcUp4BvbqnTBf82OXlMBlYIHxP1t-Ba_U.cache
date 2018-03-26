@@ -1,0 +1,19 @@
+{:uriI"˜file://app/assets/javascripts/angular/templates/items/addItem.html?type=text/ng-html&id=8a88e2cdd40428d84308b4ff391d603e084b67f1fec67ef4ef65aa896c3ad932:ET:load_pathI"app/assets/javascripts;T:filenameI"@app/assets/javascripts/angular/templates/items/addItem.html;T:	nameI"$angular/templates/items/addItem;T:logical_pathI")angular/templates/items/addItem.html;T:content_typeI"text/ng-html;T:sourceI"ù<h3 >Adicione um novo item</h3>
+  <br>
+  <form name="myForm" ng-submit="addItem()">
+    <div class="form-group">
+        <input type="text" ng-model="newItem.title" class="form-control" placeholder="TÃ­tulo" />
+    </div>  
+    <div class="form-group"> 
+      <input type="text" ng-model="newItem.notes" class="form-control" placeholder="ObservaÃ§Ã£o" />
+    </div>  
+    <div class="col-xs-12 text-center">
+      <input type="Submit" value="Adicionar" class="btn btn-success"/>
+     </div>
+  </form>
+    ;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Nfile-digest://app/assets/javascripts/angular/templates/items/addItem.html;TTF:charsetI"
+utf-8;F:digest"%&;!¡
+f²‡3†$oÎ¤VëÑpm04nr´oõ:lengthiù:dependencies_digest"%/?q‚”ø¿‡?F#M¼Ò€¨p×n939R8ÚŽr:idI"E8a88e2cdd40428d84308b4ff391d603e084b67f1fec67ef4ef65aa896c3ad932;F:
+mtimel+íò·Z

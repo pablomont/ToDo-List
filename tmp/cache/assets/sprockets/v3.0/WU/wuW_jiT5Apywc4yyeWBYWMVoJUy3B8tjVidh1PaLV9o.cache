@@ -1,0 +1,34 @@
+{:uriI"–file://app/assets/javascripts/angular/templates/items/items.html?type=text/ng-html&id=761faa88ca5ff9753ec30d1387dc14b8d29e2b6d9f0d9b34b92dd595da28078e:ET:load_pathI"app/assets/javascripts;T:filenameI">app/assets/javascripts/angular/templates/items/items.html;T:	nameI""angular/templates/items/items;T:logical_pathI"'angular/templates/items/items.html;T:content_typeI"text/ng-html;T:sourceI"D
+        <div ng-show="items.length">
+            <table class="table table-striped">
+              <thead>
+                  <tr>
+                    <th>TÃ­tulo</th>
+                    <th>ObservaÃ§Ã£o</th>
+                    <th>Feito</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>    
+                  </tr>
+              </thead>
+              <tbody>
+               <tr ng-repeat="item in items">
+                  <td>{{ item.title }}</td>
+                  <td>{{ item.notes }}</td>
+                  <td><input type="checkbox" name="done" ng-model="item.done" disabled></td>
+                  <td><a class="btn btn-primary" ui-sref="home.showItem({id: item.id})">Editar</a></td>
+                  <td><a class="btn btn-danger btn" ng-click="deleteItem($index)">Remover</a></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+          
+        <div ng-hide="items.length">
+          <div class="alert alert-warning">
+          <strong>AtenÃ§Ã£o!</strong> Ainda nÃ£o existe itens !
+         </div>
+      
+            ;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Lfile-digest://app/assets/javascripts/angular/templates/items/items.html;TTF:charsetI"
+utf-8;F:digest"%óä&±ø±RúÉÌc‰äÛâ/Ió$ã\YKöµ:lengthiD:dependencies_digest"%ôVü‘m÷t1Ø¸Íß8.]Y…ËäsªqRî/Ô¦:idI"E761faa88ca5ff9753ec30d1387dc14b8d29e2b6d9f0d9b34b92dd595da28078e;F:
+mtimel+ët¸Z
