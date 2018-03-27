@@ -1,6 +1,8 @@
 var app = angular.module('app');
 
-app.controller("ItemsController",ItemsController);
+app.controller('ItemsController',ItemsController);
+
+ItemsController.$inject = ['$scope', '$stateParams','$location','itemModel']
 
 function ItemsController($scope, $stateParams,$location,itemModel){
     $scope.item = itemModel.get({ id: $stateParams.id });

@@ -7099,3 +7099,52 @@ Processing by ItemsController#index as JSON
 Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/items" for 127.0.0.1 at 2018-03-26 03:13:16 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-26 03:13:16 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 16ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-26 03:13:17 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-26 03:13:17 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/2" for 127.0.0.1 at 2018-03-26 03:13:28 -0300
+Processing by ItemsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 41ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-26 03:13:28 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-26 03:13:54 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 16ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2018-03-26 03:13:54 -0300
+Processing by ItemsController#index as JSON
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+Completed 200 OK in 0ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
