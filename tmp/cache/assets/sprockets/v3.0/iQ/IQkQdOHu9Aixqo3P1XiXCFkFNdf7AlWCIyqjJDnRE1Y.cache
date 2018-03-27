@@ -1,45 +1,0 @@
-{:uriI"•file://app/assets/javascripts/angular/templates/items/home.html?type=text/ng-html&id=a00ab5da829d66508ac3949d73c2c6880023c57151917c18471208b4fffe479e:ET:load_pathI"app/assets/javascripts;T:filenameI"=app/assets/javascripts/angular/templates/items/home.html;T:	nameI"!angular/templates/items/home;T:logical_pathI"&angular/templates/items/home.html;T:content_typeI"text/ng-html;T:sourceI"N<div class="row">
-  <div class="col-md-12">
-      <h1>
-          To-do list
-          <a class="btn btn-primary" ui-sref="home.addItem">Add item</a>
-      </h1>
-    
-  <ui-view></ui-view>
-  
-  <br>
-
-  <div ng-show="items.length">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>TÃ­tulo</th>
-            <th>ObservaÃ§Ã£o</th>
-            <th>Feito</th>
-            <th></th>    
-            <th></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr ng-repeat="item in items">
-            <td>{{ item.title }}</td>
-            <td>{{ item.notes }}</td>
-            <td><input type="checkbox" name="done" checked="item.done"></td>
-            <td><a class="btn btn-primary btn-xs" ui-sref="/item({ itemId: item.id })">Edit</a></td>
-            <td><a class="btn btn-danger" ng-click="deleteItem($index)">Remover</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div ng-hide="items.length">
-      <div class="alert alert-warning">
-        <strong>AtenÃ§Ã£o!</strong> Ainda nÃ£o existe itens !
-      </div>
-    </div>
-  </div>;T:metadata{	:dependencieso:Set:
-@hash}
-I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"8processors:type=text/ng-html&file_type=text/ng-html;TTI"Kfile-digest://app/assets/javascripts/angular/templates/items/home.html;TTF:charsetI"
-utf-8;F:digest"%¼“ž"ÊYÑh1„‚«‚fD3áç–oñoî¡\ÍÀ (:lengthiN:dependencies_digest"%¼£ÍX®W‹s§–mý.3œDÙväuÝo§.:idI"Ea00ab5da829d66508ac3949d73c2c6880023c57151917c18471208b4fffe479e;F:
-mtimel+eR´Z
